@@ -1,16 +1,26 @@
 {
     "name": "Codice fiscale",
     "short_name": "Codicifiscale",
-    "start_url": "index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#010101",
     "theme_color": "#eba340",
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "/style/images/favicon.png",
+            "src": "/style/images/favicon192.png",
             "type": "image/png",
             "sizes": "192x192"
+        },
+        {
+            "src": "/style/images/favicon144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "/style/images/favicon512.png",
+            "type": "image/png",
+            "sizes": "512x512"
         }
     ]
 }
