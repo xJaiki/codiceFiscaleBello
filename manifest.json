@@ -1,0 +1,16 @@
+{
+    "name": "Codice fiscale",
+    "short_name": "Codicifiscale",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#010101",
+    "theme_color": "#eba340",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/style/images/favicon.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ]
+}

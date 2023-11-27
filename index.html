@@ -8,6 +8,15 @@
   <title>Generatore di Codice Fiscale Online</title>
   <link href="./style/reset.css" rel="stylesheet" as="style" />
   <link href="./style/style.css" rel="stylesheet" as="style" />
+  <link rel="apple-touch-icon" sizes="180x180" href="style/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="style/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="style/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="style/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="style/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="manifest.json" />
+  <link rel="shortcut icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -41,6 +50,11 @@
     <div id='copyPopUp' class="copyPopUp">Copiato!</div>
   </div>
   <div tabindex="8" class="input button" onclick="generaCodiceFiscale()">Genera Codice Fiscale</div>
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js', { scope: '/' });
+    }
+    </script>
 </body>
 <script src="./script/codiceFiscaleLogic.js"></script>
 </html>
