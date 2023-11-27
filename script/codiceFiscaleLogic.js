@@ -9,19 +9,23 @@ document.addEventListener("keydown", function (event) {
 
 var codiceFiscaleCopy = document.getElementById("codiceFiscaleContainer");
 var copyPopUp = document.getElementById("copyPopUp");
+// when click or tap on the codice fiscale, copy it
 codiceFiscaleCopy.addEventListener("click", function () {
+  comuneChecks();
+});
+codiceFiscaleCopy.addEventListener("touchend", function () {
   comuneChecks();
 });
 
 var emojiCounter = 0;
 function comuneChecks() {
   var codiceFiscale = document.getElementById("codiceFiscale");
-  console.log(codiceFiscale.textContent.length);
+  //console.log(codiceFiscale.textContent.length);
   if (codiceFiscale.textContent.length == 16 && codiceFiscale.textContent != "Comune non trovato") {
-    navigator.clipboard.writeText(codiceFiscale.textContent);
+    copy(codiceFiscale);
     var message = "Copiato!";
     var emoji = "👍";
-    copy(message, emoji);
+    copyMessageAnimation(message, emoji);
   } else {
     emojiCounter++;
     var messageList = [
@@ -79,12 +83,21 @@ function comuneChecks() {
     } else {
       rickroll();
     }
-    copy(message, emoji);
-    console.log(emojiCounter);
+    copyMessageAnimation(message, emoji);
+    //console.log(emojiCounter);
   }
 }
 
-function copy(message, emoji) {
+function copy(codiceFiscale) {
+  var tempInput = document.createElement("input");
+  tempInput.value = codiceFiscale.textContent;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+}
+
+function copyMessageAnimation(message, emoji) {
   copyPopUp.classList.add("fadeIn");
   copyPopUp.classList.remove("fadeOut");
   copyPopUp.textContent = message + emoji;
@@ -366,4 +379,13 @@ function rickroll() {
   window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 }
 
-
+console.log(`%c
+                                                        \n\
+                  _/            _/  _/        _/        \n\
+                 _/    _/_/_/      _/  _/               \n\
+                _/  _/    _/  _/  _/_/      _/          \n\
+         _/    _/  _/    _/  _/  _/  _/    _/           \n\
+          _/_/      _/_/_/  _/  _/    _/  _/            \n\
+                                                        \n\
+`, "background: #133337; color: #ccc; font-size: 15px;padding: 1px;font-family: monospace;");
+console.log("%c             Why are you here? 🤠👍              ", "background: #133337; color: #ccc; font-size: 15px;padding: 15px;font-family: monospace;");

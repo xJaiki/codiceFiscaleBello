@@ -17,7 +17,6 @@ body {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    position:relative;
 }
 
 input {
@@ -134,7 +133,7 @@ li {
 
 .button {
     position: absolute;
-    bottom: 70px;
+    bottom: 20px;
     width: calc(100% - 40px);
     color: var(--primary) !important;
     border: 1px solid var(--primary);
