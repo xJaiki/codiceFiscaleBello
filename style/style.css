@@ -216,3 +216,15 @@ li {
     border-radius: 15px;
     font-size: 12px;
 }
+
+/* when on desktop, the width of the body must be fixed to smartphone width */
+@media (min-width: 768px) {
+    body {
+        width: 375px;
+        margin: 0 auto;
+    }
+    .button {
+        width: inherit;
+    }
+}
+/* button on the bottom must be the same size of body */
